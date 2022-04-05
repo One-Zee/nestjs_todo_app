@@ -1,4 +1,4 @@
-import { Injectable , BadRequestException, ForbiddenException , NotFoundException } from '@nestjs/common';
+import { Injectable , BadRequestException, ForbiddenException , NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { UsersRepository } from './users.repository';
 import { AuthService } from 'src/auth/services/auth.service';
 
@@ -35,7 +35,7 @@ export class UsersService {
                 const payload:string = findUser._id;
                 return this.authService.generateJwt(payload)
             }else{
-                throw new ForbiddenException('Login was not successfull, wrong credentials');
+                throw new UnauthorizedException('Login was not successfull, wrong credentials');
             }
         }else{
             throw new NotFoundException('Login was not successfull, User not found');
