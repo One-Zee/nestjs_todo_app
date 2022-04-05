@@ -2,7 +2,7 @@ import { Controller, Delete, Post, Put, Body, Param, UseGuards } from '@nestjs/c
 import { GetToken } from 'src/auth/decorators/get-current-user-id.decorator';
 import { TasksService } from './tasks.service';
 import { CreateTaskDto, TaskDto, UpdateTaskDto } from './dtos/index.dtos';
-import { IdParamDto } from 'src/categories/dtos/id-param.dtos';
+import { IdParamDto } from 'src/categories/dtos/id-param.dto';
 import { JwtAuthGuard } from 'src/auth/guards/jwt.guard';
 import { Serialize } from 'src/interceptors/serialize.interceptor';
 
